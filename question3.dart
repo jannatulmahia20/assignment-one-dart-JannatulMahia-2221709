@@ -40,9 +40,9 @@ class BankAccount {
 
 void main() {
   // Create accounts
-  var acc1 = BankAccount('12345', 'Alice', 'Savings');
-  var acc2 = BankAccount('67890', 'Bob', 'Checking');
-  var acc3 = BankAccount('11111', 'Charlie', 'Savings');
+  final acc1 = BankAccount('12345', 'Alice', 'Savings');
+  final acc2 = BankAccount('67890', 'Bob', 'Checking');
+  final acc3 = BankAccount('11111', 'Charlie', 'Savings');
 
   // Deposits
   acc1.deposit(1000);

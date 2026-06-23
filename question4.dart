@@ -42,8 +42,7 @@ abstract class Vehicle {
 //      - Override start() and stop() methods
 class Car extends Vehicle {
 
-  Car(String brand, String model, int year, this.numberOfDoors)
-      : super(brand, model, year);
+  Car(super.brand, super.model, super.year, this.numberOfDoors);
   int numberOfDoors;
 
   @override
@@ -63,8 +62,7 @@ class Car extends Vehicle {
 }
 class Motorcycle extends Vehicle {
 
-  Motorcycle(String brand, String model, int year, this.hasWindshield)
-      : super(brand, model, year);
+  Motorcycle(super.brand, super.model, super.year, this.hasWindshield);
   bool hasWindshield;
 
   @override
@@ -84,10 +82,10 @@ class Motorcycle extends Vehicle {
   }
 }
 void main() {
-  var car = Car('Toyota', 'Camry', 2020, 4);
-  var bike = Motorcycle('Honda', 'CBR', 2021, true);
+  final car = Car('Toyota', 'Camry', 2020, 4);
+  final bike = Motorcycle('Honda', 'CBR', 2021, true);
 
-  var vehicles = <Vehicle>[car, bike];
+  final vehicles = <Vehicle>[car, bike];
 
   for (final v in vehicles) {
     v.displayInfo();

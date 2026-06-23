@@ -16,7 +16,7 @@ void main() {
   final studentNames = ['Alice', 'Bob', 'Charlie', 'Diana', 'Eve'];
 
   // 2. Scores map
-  var studentScores = <String, int>{};
+  final studentScores = <String, int>{};
 
   final random = Random();
 
@@ -49,7 +49,7 @@ void main() {
     }
   }
 
-  var averageScore = total / studentNames.length;
+  final averageScore = total / studentNames.length;
 
   print('Student Scores: $studentScores');
   print('Highest Score: $highestStudent with $highestScore');

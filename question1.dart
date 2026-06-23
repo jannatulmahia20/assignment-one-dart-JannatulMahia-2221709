@@ -26,8 +26,8 @@ String getGrade(int score) {
 }
 
 void main() {
-  var bmi = calculateBMI(72, 1.79);
-  var grade = getGrade(85);
+  final bmi = calculateBMI(72, 1.79);
+  final grade = getGrade(85);
 
   print('Name: $name, Age: $age, Height: $height, Is Student: $isStudent');
   print('BMI: $bmi');

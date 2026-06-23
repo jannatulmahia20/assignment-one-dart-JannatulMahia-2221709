@@ -29,7 +29,7 @@ mixin Payable {
 // 2. Mixin Reportable:
 //    - Method: String generateReport(String employeeName, String department)
 mixin Reportable {
-  String generateReport(String employeeName, String department) => "Report: Monthly report for $employeeName in $department department";
+  String generateReport(String employeeName, String department) => 'Report: Monthly report for $employeeName in $department department';
 }
 
 // 3. Abstract Class Employee:
@@ -60,10 +60,10 @@ class Manager extends Employee with Payable, Reportable {
   int teamSize;
 
   @override
-  String getJobTitle() => "Manager";
+  String getJobTitle() => 'Manager';
 
   @override
-  double getBaseSalary() => 8000.0;
+  double getBaseSalary() => 8000;
 
   @override
   void displayInfo() {
@@ -81,10 +81,10 @@ class Developer extends Employee with Payable {
   String programmingLanguage;
 
   @override
-  String getJobTitle() => "Senior Developer";
+  String getJobTitle() => 'Senior Developer';
 
   @override
-  double getBaseSalary() => 6000.0;
+  double getBaseSalary() => 6000;
 
   @override
   void displayInfo() {
@@ -93,15 +93,15 @@ class Developer extends Employee with Payable {
   }
 }
 void main() {
-  var manager = Manager('John Smith', 'M001', 'IT', 5);
-  var dev = Developer('Alice Johnson', 'D001', 'IT', 'Dart');
+  final manager = Manager('John Smith', 'M001', 'IT', 5);
+  final dev = Developer('Alice Johnson', 'D001', 'IT', 'Dart');
 
   // Manager
   manager.displayInfo();
   print('Job Title: ${manager.getJobTitle()}');
   print('Base Salary: ${manager.getBaseSalary()}');
 
-  var managerSalary = manager.calculateSalary(8000, 1000);
+  final managerSalary = manager.calculateSalary(8000, 1000);
   print('Calculated Salary: $managerSalary');
   manager.processPayment(managerSalary);
 
@@ -114,7 +114,7 @@ void main() {
   print('Job Title: ${dev.getJobTitle()}');
   print('Base Salary: ${dev.getBaseSalary()}');
 
-  var devSalary = dev.calculateSalary(6000, 500);
+  final devSalary = dev.calculateSalary(6000, 500);
   print('Calculated Salary: $devSalary');
   dev.processPayment(devSalary);
 }
