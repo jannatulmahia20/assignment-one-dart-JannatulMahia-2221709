@@ -19,17 +19,17 @@ library;
 //    - Abstract method: void stop()
 //    - Concrete method: void displayInfo()
 abstract class Vehicle {
+
+  Vehicle(this.brand, this.model, this.year);
   String brand;
   String model;
   int year;
-
-  Vehicle(this.brand, this.model, this.year);
 
   void start();
   void stop();
 
   void displayInfo() {
-    print("Vehicle Info: $year $brand $model");
+    print('Vehicle Info: $year $brand $model');
   }
 
   int calculateAge() {
@@ -41,61 +41,61 @@ abstract class Vehicle {
 //      - Additional property: int numberOfDoors
 //      - Override start() and stop() methods
 class Car extends Vehicle {
-  int numberOfDoors;
 
   Car(String brand, String model, int year, this.numberOfDoors)
       : super(brand, model, year);
+  int numberOfDoors;
 
   @override
   void start() {
-    print("Starting the car engine...");
+    print('Starting the car engine...');
   }
 
   @override
   void stop() {
-    print("Stopping the car engine...");
+    print('Stopping the car engine...');
   }
 
   @override
   void displayInfo() {
-    print("Vehicle Info: $year $brand $model ($numberOfDoors doors)");
+    print('Vehicle Info: $year $brand $model ($numberOfDoors doors)');
   }
 }
 class Motorcycle extends Vehicle {
-  bool hasWindshield;
 
   Motorcycle(String brand, String model, int year, this.hasWindshield)
       : super(brand, model, year);
+  bool hasWindshield;
 
   @override
   void start() {
-    print("Starting the motorcycle engine...");
+    print('Starting the motorcycle engine...');
   }
 
   @override
   void stop() {
-    print("Stopping the motorcycle engine...");
+    print('Stopping the motorcycle engine...');
   }
 
   @override
   void displayInfo() {
     print(
-        "Vehicle Info: $year $brand $model (Has windshield: $hasWindshield)");
+        'Vehicle Info: $year $brand $model (Has windshield: $hasWindshield)',);
   }
 }
 void main() {
-  Car car = Car("Toyota", "Camry", 2020, 4);
-  Motorcycle bike = Motorcycle("Honda", "CBR", 2021, true);
+  var car = Car('Toyota', 'Camry', 2020, 4);
+  var bike = Motorcycle('Honda', 'CBR', 2021, true);
 
-  List<Vehicle> vehicles = [car, bike];
+  var vehicles = <Vehicle>[car, bike];
 
-  for (var v in vehicles) {
+  for (final v in vehicles) {
     v.displayInfo();
     v.start();
     v.stop();
-    print("");
+    print('');
   }
 
-  print("Car age: ${car.calculateAge()} years");
-  print("Motorcycle age: ${bike.calculateAge()} years");
+  print('Car age: ${car.calculateAge()} years');
+  print('Motorcycle age: ${bike.calculateAge()} years');
 }

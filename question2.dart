@@ -13,28 +13,28 @@ import 'dart:math';
 
 void main() {
   // 1. Student names
-  var studentNames = ["Alice", "Bob", "Charlie", "Diana", "Eve"];
+  final studentNames = ['Alice', 'Bob', 'Charlie', 'Diana', 'Eve'];
 
   // 2. Scores map
-  Map<String, int> studentScores = {};
+  var studentScores = <String, int>{};
 
-  var random = Random();
+  final random = Random();
 
   // 3. Assign random scores
-  for (var student in studentNames) {
+  for (final student in studentNames) {
     studentScores[student] = 60 + random.nextInt(41); // 60–100
   }
 
   // 4. Find highest, lowest, average
-  String highestStudent = '';
-  String lowestStudent = '';
-  int highestScore = 0;
-  int lowestScore = 100;
-  int total = 0;
+  var highestStudent = '';
+  var lowestStudent = '';
+  var highestScore = 0;
+  var lowestScore = 100;
+  var total = 0;
 
-  for (var entry in studentScores.entries) {
-    var name = entry.key;
-    var score = entry.value;
+  for (final entry in studentScores.entries) {
+    final name = entry.key;
+    final score = entry.value;
 
     total += score;
 
@@ -49,7 +49,7 @@ void main() {
     }
   }
 
-  double averageScore = total / studentNames.length;
+  var averageScore = total / studentNames.length;
 
   print('Student Scores: $studentScores');
   print('Highest Score: $highestStudent with $highestScore');
@@ -57,23 +57,23 @@ void main() {
   print('Average Score: $averageScore');
 
   // 5. Categorization using switch
-  for (var student in studentNames) {
-    var score = studentScores[student] ?? 0;
-    String category = '';
+  for (final student in studentNames) {
+    final score = studentScores[student] ?? 0;
+    var category = '';
 
     switch (score ~/ 10) {
       case 10:
       case 9:
-        category = "Excellent";
+        category = 'Excellent';
         break;
       case 8:
-        category = "Good";
+        category = 'Good';
         break;
       case 7:
-        category = "Average";
+        category = 'Average';
         break;
       default:
-        category = "Needs Improvement";
+        category = 'Needs Improvement';
     }
 
     print('$student: $score ($category)');

@@ -9,13 +9,13 @@ library;
 
 // Create a BankAccount class with the following specifications:
 class BankAccount {
+
+  BankAccount(this.accountNumber, this.accountHolder, this.accountType)
+      : balance = 0.0;
   String accountNumber;
   String accountHolder;
   double balance;
   String accountType;
-
-  BankAccount(this.accountNumber, this.accountHolder, this.accountType)
-      : balance = 0.0;
 
   void deposit(double amount) {
     balance += amount;
@@ -26,34 +26,32 @@ class BankAccount {
       balance -= amount;
     } else {
       print(
-          "Insufficient funds for withdrawal of $amount from account $accountNumber");
+          'Insufficient funds for withdrawal of $amount from account $accountNumber',);
     }
   }
 
-  double getBalance() {
-    return balance;
-  }
+  double getBalance() => balance;
 
   void displayAccountInfo() {
     print(
-        "Account: $accountNumber, Holder: $accountHolder, Type: $accountType, Balance: $balance");
+        'Account: $accountNumber, Holder: $accountHolder, Type: $accountType, Balance: $balance',);
   }
 }
 
 void main() {
   // Create accounts
-  BankAccount acc1 = BankAccount("12345", "Alice", "Savings");
-  BankAccount acc2 = BankAccount("67890", "Bob", "Checking");
-  BankAccount acc3 = BankAccount("11111", "Charlie", "Savings");
+  var acc1 = BankAccount('12345', 'Alice', 'Savings');
+  var acc2 = BankAccount('67890', 'Bob', 'Checking');
+  var acc3 = BankAccount('11111', 'Charlie', 'Savings');
 
   // Deposits
-  acc1.deposit(1000.0);
-  acc2.deposit(500.0);
-  acc3.deposit(2000.0);
+  acc1.deposit(1000);
+  acc2.deposit(500);
+  acc3.deposit(2000);
 
   // Withdrawals
-  acc1.withdraw(200.0);
-  acc2.withdraw(100.0);
+  acc1.withdraw(200);
+  acc2.withdraw(100);
 
   // Display accounts
   acc1.displayAccountInfo();
@@ -61,5 +59,5 @@ void main() {
   acc3.displayAccountInfo();
 
   // Insufficient funds test
-  acc2.withdraw(1000.0);
+  acc2.withdraw(1000);
 }
